@@ -5,7 +5,8 @@ class Solution:
 
         while l < r:
             currAmt = min(height[l], height[r]) * (r - l)
-            amt = max(amt, currAmt)
+            if currAmt > amt:
+                amt = currAmt
             
             if height[l] < height[r]:
                 l += 1
