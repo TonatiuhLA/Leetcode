@@ -4,21 +4,12 @@ class Solution:
         amt = 0
 
         while l < r:
-            left, right = height[l], height[r]
-            sq = min(left, right)
-            dst = r - l
-            print(sq, dst)
-            print()
-
-            if sq * dst > amt:
-                amt = sq * dst
+            currAmt = min(height[l], height[r]) * (r - l)
+            amt = max(amt, currAmt)
             
-            if left == right:
-                r -= 1
+            if height[l] < height[r]:
+                l += 1
             else:
-                if left < right:
-                    l += 1
-                else:
-                    r -= 1
+                r -= 1
         
         return amt
