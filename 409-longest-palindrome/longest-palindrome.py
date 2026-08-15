@@ -16,8 +16,4 @@ class Solution:
                     truke = True
             else:
                 ret += val
-        '''
-        if truke and ret % 2 == 0:
-            print("adding one")
-            ret += 1 '''
         return ret
